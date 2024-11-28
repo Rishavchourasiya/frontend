@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rishav.newside</title>
+
+    
+</head>
+<link rel="stylesheet" href="" class="css">
+<style>
+    /* css reset */
+    body {
+        color: white;
+        margin: 0px;
+        padding: 0px;
+        background: url("image/bg.r1.jpg");
+
+    }
+
+    .left {
+        display: inline-block;
+        border: 2px solid #000000;
+        position: absolute;
+        left: 62px;
+        top: 37px;
+    }
+
+
+    .left img {
+        width: 123px;
+        color: black;
+    }
+
+    .mid {
+        display: block;
+        width: 600px;
+        margin: 35px auto;
+        border: 2px solid rgb(240, 151, 63);
+
+    }
+
+    .right {
+        position: absolute;
+        right: 35px;
+        top: 20px;
+        display: inline-block;
+        border: 2px solid rgb(73, 179, 184);
+
+
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 30px;
+
+
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none;
+        padding: 34px 23px;
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: palevioletred;
+    }
+
+    .btn {
+        --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+        --border-width: .125em;
+        --curve-size: .5em;
+        --blur: 30px;
+        --bg: #080312;
+        --color: #afffff;
+        color: var(--color);
+        /* use position: relative; so that BG is only for .btn */
+        position: relative;
+        isolation: isolate;
+        display: inline-grid;
+        place-content: center;
+        padding: .5em 1.5em;
+        font-size: 17px;
+        border: 0;
+        text-transform: uppercase;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+        clip-path: polygon(
+                /* Top-left */
+                0% var(--curve-size),
+
+                var(--curve-size) 0,
+                /* top-right */
+                100% 0,
+                100% calc(100% - var(--curve-size)),
+
+                /* bottom-right 1 */
+                calc(100% - var(--curve-size)) 100%,
+                /* bottom-right 2 */
+                0 100%);
+        transition: color 250ms;
+    }
+
+    .btn::after,
+    .btn::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+    }
+
+    .btn::before {
+        background: var(--border-color);
+        background-size: 300% 300%;
+        animation: move-bg7234 5s ease infinite;
+        z-index: -2;
+    }
+
+    @keyframes move-bg7234 {
+        0% {
+            background-position: 31% 0%
+        }
+
+        50% {
+            background-position: 70% 100%
+        }
+
+        100% {
+            background-position: 31% 0%
+        }
+    }
+
+    .btn::after {
+        background: var(--bg);
+        z-index: -1;
+        clip-path: polygon(
+                /* Top-left */
+                var(--border-width) calc(var(--curve-size) + var(--border-width) * .5),
+
+                calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+                /* top-right */
+                calc(100% - var(--border-width)) var(--border-width),
+
+                calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */
+                var(--border-width) calc(100% - var(--border-width)));
+        transition: clip-path 500ms;
+    }
+
+    .btn:where(:hover, :focus)::after {
+        clip-path: polygon(
+                /* Top-left */
+                calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+
+                calc(100% - var(--border-width)) var(--border-width),
+
+                /* top-right */
+                calc(100% - var(--border-width)) var(--border-width),
+
+                calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+
+                /* bottom-right 2 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+        transition: 200ms;
+    }
+
+    .btn:where(:hover, :focus) {
+        color: #fff;
+    }
+
+    .container {
+
+        border: 4px solid rgb(66 84 66 / 38%);
+        margin: 8px 169px;
+        padding: 92px 88px;
+        width: 26%;
+        border-radius: 15px;
+        display: inline-block;
+    }
+
+    .form-group input {
+        background-color: #4acaca6b;
+
+        text-align: center;
+        display: block;
+        width: 411px;
+        padding: 9px;
+        border: 5px solid rgb(35 37 34);
+        margin: 6PX AUTO;
+        border-radius: 17PX;
+        FONT-SIZE: 22PX;
+    }
+
+    .form-group input:focus {
+        color: rgb(0, 255, 255);
+        background-color: #212121;
+        outline-color: rgb(0, 255, 255);
+        box-shadow: -3px -3px 15px rgb(0, 255, 255);
+        transition: .1s;
+        transition-property: box-shadow;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+
+    .container button {
+        display: block;
+        width: 65%;
+        margin: auto;
+    }
+
+    .button {
+        position: relative;
+        overflow: hidden;
+        height: 3rem;
+        padding: 0 2rem;
+        border-radius: 1.5rem;
+        background: #3d3a4e;
+        background-size: 400%;
+        color: #fff;
+    }
+
+    .button:hover::before {
+        transform: scaleX(1);
+    }
+
+    .button-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        width: 100%;
+        height: inherit;
+        border-radius: inherit;
+        background: linear-gradient(82.3deg,
+                rgba(150, 93, 233, 1) 10.8%,
+                rgba(99, 88, 238, 1) 94.3%);
+        transition: all 0.475s;
+    }
+
+    .rc img {
+        width: 930px;
+
+
+        height: 440px;
+
+        margin-left: 141px;
+        margin-top: 90px;
+        color: #000000;
+    }
+
+    .rc h1 {
+        font-size: 38px;
+        color: #6faddc;
+        margin: 20px 128px;
+        padding: 27px 30px;
+        margin: 22px 22px;
+    }
+    .card-client {
+  background: #2cb5a0;
+  width: 13rem;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 4px solid #7cdacc;
+  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.card-client:hover {
+  transform: translateY(-10px);
+}
+
+.user-picture {
+  overflow: hidden;
+  object-fit: cover;
+  width: 5rem;
+  height: 5rem;
+  border: 4px solid #7cdacc;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.user-picture svg {
+  width: 2.5rem;
+  fill: currentColor;
+}
+
+.name-client {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.name-client span {
+  display: block;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.social-media:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background: #7cdacc;
+}
+
+.social-media a {
+  position: relative;
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+.social-media a svg {
+  width: 1.1rem;
+  fill: currentColor;
+}
+
+/*-- Tooltip Social Media --*/
+.tooltip-social {
+  background: #262626;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -90%);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.tooltip-social:after {
+  content: " ";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+  border-top-color: #262626;
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+}
+.card-client{  position: absolute;
+        right: 35px;
+        top: 200px;
+        display: inline-block;
+                  
+}
+.tjo{
+
+    width: auto 50px;
+    height: 50px;
+    margin-top: 20px ;
+    position: absolute;
+    padding: 20px 40 ;
+}
+</style>
+
+
+
+
+<body>
+    <header class="header">
+        <!-- left box for logo  -->
+        <div class="left">
+
+            <img src="image/bg.2.jpg" alt="">
+
+
+
+
+        </div>
+        <!-- mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li> <a href="https://www.pexels.com/search/car/" class="active">home</a></li>
+                <li> <a href="#">about us </a></li>
+                <li> <a href="#">review</a></li>
+                <li> <a href="#">contact </a></li>
+            </ul>
+
+
+        </div>
+        <!-- right box for buttons -->
+        <div class="right">
+            <button class="btn">email us</button>
+            <button class="btn">contact us</button>
+
+        </div>
+        <div class="container">
+            <h1>come to my car showroom in mumbai </h1>
+            <form action="noaction.php">
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your age">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your gender">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your locality">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your phone number">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your email">
+                </div>
+                <button class="button">
+                    <span class="button-content">submit</span>
+                </button>
+            </form>
+
+        </div>
+
+        <div class="container">
+            <h1>welcome to bike showroom in bhopal</h1>
+            <form action="no.action.php">
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your age">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your gender">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your locality">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your phone number">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="" placeholder="inter your email">
+                </div>
+                <button class="button">
+                    <span class="button-content">submit</span>
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+    </header>
+
+    <div class="rc">
+        <h1>this car is verry expensive at this moment this car price only 500$ inter your details in the form </h1>
+        <img src="image/bg.4.jpg" alt="">
+    </div>
+
+    <div class="rc">
+        <h2></h2>
+        <img src="image/bg.5.jpg" alt="">
+    </div>
+    <div class="rc">
+        <img src="image/bg.6.jpg" alt="">
+    </div>
+    <div class="rc">
+        <img src="image/bg.7.jpg" alt="">
+    </div>
+    <div class="rc">
+        <img src="image/bg.8.jpg" alt="">
+    </div>
+           <hr>
+            <div class="tjo
+            ">  <img src="image/bg.9.jpg" alt=""></div>
+   
+        
+   
+    
+    
+</body>
+
+</html>
